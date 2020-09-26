@@ -268,16 +268,16 @@ NSString * const DDGSettingHomeViewTypeDuck = @"Duck Mode";
         [self addButton:NSLocalizedString(@"Send Feedback", @"Button: Send Feedback") forKey:@"feedback" detailTitle:nil type:IGFormButtonTypeNormal action:^{
             MFMailComposeViewController *mailVC = [[MFMailComposeViewController alloc] init];
             mailVC.mailComposeDelegate = weakSelf;
-            [mailVC setToRecipients:@[@"help@duckduckgo.com"]];
-            [mailVC setSubject:@"DuckDuckGo for iOS feedback"];
+            [mailVC setToRecipients:@[@"yebaotech@gmail.com"]];
+            [mailVC setSubject:@"Onbibi for iOS feedback"];
             [mailVC setMessageBody:[NSString stringWithFormat:@"I'm running %@. Here's my feedback:", [weakSelf deviceInfo]] isHTML:NO];
             [weakSelf presentViewController:mailVC animated:YES completion:NULL];
         }];
     }
     
     [self addButton:NSLocalizedString(@"Share", @"Button: Share") forKey:@"share" detailTitle:nil type:IGFormButtonTypeNormal action:^{
-        NSString *shareTitle = NSLocalizedString(@"Check out the DuckDuckGo iOS app!", @"Share title: Check out the DuckDuckGo iOS app!");
-        NSURL *shareURL = [NSURL URLWithString:@"https://itunes.apple.com/app/id663592361"];
+        NSString *shareTitle = NSLocalizedString(@"Check out the Onbibi iOS app!", @"Share title: Check out the Onbibi iOS app!");
+        NSURL *shareURL = [NSURL URLWithString:@"https://itunes.apple.com/app/id1530776490"];
         DDGActivityViewController *avc = [[DDGActivityViewController alloc] initWithActivityItems:@[shareTitle, shareURL] applicationActivities:@[]];
         if ( [avc respondsToSelector:@selector(popoverPresentationController)] ) {
             // iOS8
@@ -289,7 +289,7 @@ NSString * const DDGSettingHomeViewTypeDuck = @"Duck Mode";
     }];
     
     [self addButton:NSLocalizedString(@"Leave a Rating", @"Button: Leave a Rating") forKey:@"rate" detailTitle:nil type:IGFormButtonTypeNormal action:^{
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"itms-apps://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?id=663592361&onlyLatestVersion=true&pageNumber=0&sortOrdering=1&type=Purple+Software"]];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"itms-apps://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?id=1530776490&onlyLatestVersion=true&pageNumber=0&sortOrdering=1&type=Onbibi+Software"]];
     }];
 
     NSString *bundleVersion = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"];
@@ -406,7 +406,7 @@ NSString * const DDGSettingHomeViewTypeDuck = @"Duck Mode";
     NSString *appVersion = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"];
     NSString *osVersion = [[UIDevice currentDevice] systemVersion];
     
-    return [NSString stringWithFormat:@"DuckDuckGo v%@ on an %@ (iOS %@)",appVersion,device,osVersion];
+    return [NSString stringWithFormat:@"Onbibi v%@ on an %@ (iOS %@)",appVersion,device,osVersion];
 }
 
 
