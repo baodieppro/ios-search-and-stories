@@ -338,13 +338,13 @@
     NSString *pageTitle = [self.webView stringByEvaluatingJavaScriptFromString:@"document.title"];
     if(query) {
         NSString *escapedQuery = [query stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-        shareURL = [NSURL URLWithString:[@"https://duckduckgo.com/?q=" stringByAppendingString:escapedQuery]];
+        shareURL = [NSURL URLWithString:[@"https://onbibi.com/search?q=" stringByAppendingString:escapedQuery]];
     } else if(self.story) {
         shareURL = self.story.URL;
         pageTitle = self.story.title;
     }
     
-    NSString* shareString = [NSString stringWithFormat:NSLocalizedString(@"%@\n\nvia DuckDuckGo for iOS\n\n", @"%@\n\nvia DuckDuckGo for iOS\n\n"), pageTitle];
+    NSString* shareString = [NSString stringWithFormat:NSLocalizedString(@"%@\n\nvia Onbibi for iOS\n\n", @"%@\n\nvia Onbibi for iOS\n\n"), pageTitle];
     
     NSArray *applicationActivities = @[];
     NSArray *items = @[shareString, shareURL];
@@ -491,7 +491,7 @@
         self.isAStory = false;
         NSLog(@"Is not a story for querystring %@", queryOrURLString);
         // direct query
-        urlString = [NSString stringWithFormat:@"https://duckduckgo.com/?q=%@&ko=-1&kl=%@",
+        urlString = [NSString stringWithFormat:@"https://onbibi.com/search?q=%@",
                      [queryOrURLString URLEncodedStringDDG], 
                      [[NSUserDefaults standardUserDefaults] objectForKey:DDGSettingRegion]];
     }
