@@ -18,7 +18,7 @@
 + (NSURLRequest *)requestWithURL:(NSURL *)URL
 {
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:URL];
-    if ([[URL host] hasSuffix:@"duckduckgo.com"]) {
+    if ([[URL host] hasSuffix:@"onbibi.com"]) {
         [request setValue:[DDGUtility agentDDG] forHTTPHeaderField:@"User-Agent"];
     }
     return [request copy];
