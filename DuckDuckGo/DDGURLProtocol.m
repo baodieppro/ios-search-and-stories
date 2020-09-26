@@ -21,7 +21,7 @@
 
 + (BOOL)canInitWithRequest:(NSURLRequest *)request
 {
-    if ([[request.URL host] hasSuffix:@"duckduckgo.com"]) {
+    if ([[request.URL host] hasSuffix:@"onbibi.com"]) {
         if (![NSURLProtocol propertyForKey:@"UserAgentSet" inRequest:request]) {
             return YES;
         }
@@ -37,7 +37,7 @@
 - (void)startLoading
 {
     NSMutableURLRequest *request = [self.request mutableCopy];
-    if ([[request.URL host] hasSuffix:@"duckduckgo.com"]) {
+    if ([[request.URL host] hasSuffix:@"onbibi.com"]) {
         [request setValue:[DDGUtility agentDDG] forHTTPHeaderField:@"User-Agent"];
         [NSURLProtocol setProperty:@YES forKey:@"UserAgentSet" inRequest:request];
     }
