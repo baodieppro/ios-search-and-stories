@@ -746,8 +746,8 @@ NSString * const emailRegEx =
     }
     
     // check whether we have a DDG search URL
-    if([[url host] isEqualToString:@"duckduckgo.com"]) {
-        if(([[url path] isEqualToString:@"/"] || [[url path] isEqualToString:@"/ioslinks"]) && [queryComponents objectForKey:@"q"]) {
+    if([[url host] isEqualToString:@"onbibi.com"]) {
+        if(([[url path] isEqualToString:@"/"] || [[url path] isEqualToString:@"/search"]) && [queryComponents objectForKey:@"q"]) {
             // yep! extract the search query...
             NSString *query = [queryComponents objectForKey:@"q"];
             query = [query stringByReplacingOccurrencesOfString:@"+" withString:@"%20"];
